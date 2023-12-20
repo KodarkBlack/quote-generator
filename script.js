@@ -3,6 +3,7 @@ authorName = document.querySelector(".author .name")
 quoteBtn = document.querySelector("button")
 soundBtn = document.querySelector(".sound")
 copyBtn = document.querySelector(".copy")
+twitterBtn = document.querySelector(".twitter")
 
 // Random quote function
 
@@ -17,5 +18,21 @@ randomQuote =  () => {
         quoteBtn.classList.remove("loading")
     })
 }
+
+soundBtn.addEventListener("click", ()=> {
+    let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${authorName.innerText}`);
+    speechSynthesis.speak(utterance)
+})
+
+
+copyBtn.addEventListener("click", ()=> {
+    navigator.clipboard.writeText(quoteText.innerText)
+})
+
+twitterBtn.addEventListener("click", ()=> {
+    let twitterUrl = `${quoteText.innerText}`;
+    window.open(twitterUrl, "_blank");
+})
+
 
 quoteBtn.addEventListener("click", randomQuote)
