@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Sign In</title>
 </head>
 
 <body>
@@ -27,22 +27,23 @@
         }
     </style>
     <main>
-        <form id="signUpForm">
+        <form id="signUpForm" onsubmit="login(event)">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" required>
 
             <label for="password">Password</label>
             <input type="password" name="password" id="password" required>
 
-            <button type="submit">Sign Up</button>
+            <button type="submit" id="signIn">Sign In</button>
         </form>
+
         <div>
-            <p>Already a member?</p>
-            <a href="/Signin.html">Sign in</a>
+            <p>Not a member?</p>
+            <a href="/register.html">Register</a>
         </div>
     </main>
-    
 
-    <script type="module" src="/register.js"></script>
+
+    <script type="module" src="signin.js"></script>
 </body>
 </html>
