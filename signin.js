@@ -27,15 +27,26 @@ window.login = function(e){
       email:email.value,
       password:password.value
     };
+
+    document.querySelector('.loader').style.display = 'flex';
+    document.getElementById('signUpForm').style.display = 'none'
+    document.getElementById('notamember').style.display = 'none'
   
     signInWithEmailAndPassword(auth, obj.email, obj.password)
     .then(function (success){
       console.log(success.user.uid)
+
       alert("Logged in successfully")
-      window.location.href = "/quote.html"
+
+      // Hide loader after successful login
+      document.querySelector('.loader').style.display = 'none';
+      setTimeout(() =>{
+        window.location.href = "/quote.html"
+      })
     })
     .catch(function (error){
       alert("Login error" + error)
-    })
+      document.querySelector('.loader').style.display = 'none';
+    });
     console.log(obj)
 }
