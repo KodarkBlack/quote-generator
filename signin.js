@@ -42,7 +42,7 @@ window.login = function(e){
       document.querySelector('.loader').style.display = 'none';
       setTimeout(() =>{
         window.location.href = "/quote.html"
-      })
+      }, 10000)
     })
     .catch(function (error){
       alert("Login error" + error)
