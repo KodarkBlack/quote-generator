@@ -9,10 +9,11 @@
 <body>
     <style>
         body {
-            background: #443b3b;
+            background: #301212;
         }
+
         main{
-            height: 80vh;
+            height: 100dvh;
             justify-content: center;
             display: flex;
             flex-direction: column;
@@ -27,6 +28,7 @@
             padding: 20px;
             margin-top: 10%;
             background: #fafafa;
+            border-radius: 20px;
         }
 
         #signUp {
@@ -40,18 +42,72 @@
         #signUp:hover {
             background: blue;
         }
-    </style>
-    <main>
-        <form id="signUpForm">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
+
+        .emailLabel {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .memberDiv {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        .memberDiv a {
+            margin-top: 15px;
+            color: white;
+        }
+
+        .memberDiv p {
+            color: white;
+        }
+
+        .memberDiv a:hover {
+            color: blue;
+        }
+
+        .inputPrt {
+            border-radius: 30px;
+            border: solid red 1px;
+            background: #f5f5f5;
+            padding: 15px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .mide-payment-solution {
+            color: #f5f5f5;
+            font-size: 30px;
+        }
+
+        @media (max-width: 580px ) {
+            form {
+                width: 90%;
+            }
+
+            .memberDiv {
+                width: 100%;
+                padding: 15px 20px;
+            }
+            
+        }
+    </style>
+
+
+    <main>
+        <h3 class="mide-payment-solution">Mide Payment Solution</h3>
+        <form id="signUpForm">
+            <label class="emailLabel" for="email">Email</label>
+            <input class="inputPrt" type="email" name="email" id="email" required>
+
+            <label class="emailLabel" for="password">Password</label>
+            <input class="inputPrt" type="password" name="password" id="password" required>
 
             <button type="submit" id="signUp">Sign Up</button>
         </form>
-        <div>
+        <div class="memberDiv">
             <p>Already a member?</p>
             <a href="/Signin.html">Sign in</a>
         </div>
